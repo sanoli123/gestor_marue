@@ -1,0 +1,26 @@
+# /public_html/gestor-marue/.htaccess
+
+# Garante que o PHP é servido antes do HTML
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- Força HTTPS + WWW (opcional manter aqui também) ---
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://www.brquest.com.br%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} !^www\.brquest\.com\.br$ [NC]
+  RewriteRule ^ https://www.brquest.com.br%{REQUEST_URI} [L,R=301]
+
+  # --- NÃO reescrever chamadas à API ---
+  RewriteRule ^api/ - [L]
+
+  # --- Arquivos estáticos passam direto ---
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # --- SPA fallback: sempre enviar para index.php (e não index.html) ---
+  RewriteRule . /gestor-marue/index.php [L]
+</IfModule>

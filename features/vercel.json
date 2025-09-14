@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://www.brquest.com.br/gestor-marue/api/$1" }
+  ]
+}

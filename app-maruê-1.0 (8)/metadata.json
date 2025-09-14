@@ -1,0 +1,5 @@
+{
+  "name": "App Maruê 1.0",
+  "description": "A mini-ERP SPA for small businesses to manage inventory, production, sales, and operational costs. All data is stored locally in the browser, allowing for offline use.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor Maruê</title>
+
+    <!-- Tailwind (ok manter se você usa via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              crema: '#FAF3E3',
+              oliva: '#6A6C4F',
+              espresso: '#5E3A2E',
+              lino: '#E9DFD3',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+
+  <body class="bg-crema">
+    <div id="root"></div>
+
+    <!-- ENTRY CORRETO PARA O VITE: seu arquivo TSX de entrada -->
+    <!-- Se o seu entry estiver na raiz, use /index.tsx; se estiver em src/, use /src/index.tsx -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
